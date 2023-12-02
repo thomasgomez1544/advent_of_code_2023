@@ -1,2 +1,2 @@
-# 2023_advent_of_code
+# advent_of_code_2023
 2023 Advent of Code in JavaScript
