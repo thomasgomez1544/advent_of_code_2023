@@ -1,15 +1,14 @@
-const array = generateArray();
-calculateNumbers(array);
-
 const filePath =
   "C:/Users/thoma/Documents/Code/advent_of_code/2023/day_1/data.txt";
 
 const testFilePath =
-  "C:/Users/thoma/Documents/Code/advent_of_code/2023/day_1/test_data.txt";
+  "C:/Users/thoma/Documents/Code/advent_of_code_2023/day_1/test_data.txt";
 
-function generateArray(testFilePath) {
+calculateNumbers(generateArray(filePath));
+
+function generateArray(path) {
   const fs = require("fs");
-  const fileContent = fs.readFileSync(filePath, "utf8");
+  const fileContent = fs.readFileSync(path, "utf8");
   const dataArray = fileContent.split(/\r?\n/);
   const filteredArray = dataArray.filter((line) => line.trim() !== "");
   return filteredArray;
