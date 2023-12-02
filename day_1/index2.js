@@ -1,8 +1,8 @@
-const filePath =
-  "C:/Users/thoma/Documents/Code/advent_of_code/2023/day_1/data.txt";
+const testFilePath = "day_1/test_data_2.txt";
 
-const testFilePath =
-  "C:/Users/thoma/Documents/Code/advent_of_code_2023/day_1/test_data.txt";
+calculateNumbers(replaceNumbers(generateArray(testFilePath)));
+
+const filePath = "day_1/data.txt";
 
 calculateNumbers(replaceNumbers(generateArray(filePath)));
 
