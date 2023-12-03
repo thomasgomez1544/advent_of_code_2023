@@ -22,10 +22,6 @@ const testFilePath = "day_2/test_data.txt";
 //   },
 // ];
 
-const totalRedCubes = 12;
-const totalGreenCubes = 13;
-const totalBlueCubes = 14;
-
 checkrounds(generateArray(filePath));
 
 function generateArray(path) {
@@ -61,23 +57,25 @@ function generateArray(path) {
 }
 
 function checkrounds(gameObj) {
-  let sumOfId = 0;
-  gameObj.forEach((element, index) => {
-    let notValidRound = false;
-    element.round.forEach((roundElement) => {
-      if (roundElement.red > totalRedCubes) {
-        notValidRound = true;
+  let sumOfPowers = 0;
+  gameObj.forEach((game, index) => {
+    let highestRedCubeCount = 0;
+    let highestGreenCubeCount = 0;
+    let highestBlueCubeCount = 0;
+    game.round.forEach((roundElement) => {
+      if (roundElement.red > highestRedCubeCount) {
+        highestRedCubeCount = roundElement.red;
       }
-      if (roundElement.green > totalGreenCubes) {
-        notValidRound = true;
+      if (roundElement.green > highestGreenCubeCount) {
+        highestGreenCubeCount = roundElement.green;
       }
-      if (roundElement.blue > totalBlueCubes) {
-        notValidRound = true;
+      if (roundElement.blue > highestBlueCubeCount) {
+        highestBlueCubeCount = roundElement.blue;
       }
     });
-    if (!notValidRound) {
-      sumOfId += gameObj[index].id;
-    }
+    powerOfCubes =
+      highestRedCubeCount * highestGreenCubeCount * highestBlueCubeCount;
+    sumOfPowers += powerOfCubes;
   });
-  console.log(sumOfId);
+  console.log(sumOfPowers);
 }
